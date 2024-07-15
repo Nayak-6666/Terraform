@@ -1,11 +1,16 @@
+provider "aws"{
+region = "us-east-1"
+}
+
 resource "aws_vpc" "vpc1"{
 id       = "vpc-0194d26b6dcff5e36"
 tags = {
 Name = "vpc1"
   }
 }
+
 resource "aws_security_group" "web" {
-  vpc_id      = data.aws_vpc.default.id
+  vpc_id      = vpc-0194d26b6dcff5e36"
   name        = "web-sg"
   description = "Allow HTTP and SSH traffic"
 
