@@ -1,5 +1,8 @@
-data "aws_vpc" "default" {
-  default = true
+resource "aws_vpc" "vpc1"{
+id       = "vpc-0194d26b6dcff5e36"
+tags = {
+Name = "vpc1"
+  }
 }
 resource "aws_security_group" "web" {
   vpc_id      = data.aws_vpc.default.id
